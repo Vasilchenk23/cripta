@@ -1,5 +1,15 @@
+body {
+    margin: 0;
+    scrollbar-color: #0806aa transparent;
+    scrollbar-width: thin;
+}
 
-body{
-  margin: -8px -8px;
-  height: 889px;
+body::-webkit-scrollbar-thumb {
+    background: #50a3b1;
+    border-radius: 3rem;
+}
+
+body::-webkit-scrollbar {
+    background: transparent;
+    width: 6px;
 }

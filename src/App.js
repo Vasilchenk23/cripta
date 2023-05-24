@@ -1,21 +1,36 @@
 import styled from "styled-components";
 import icon from "./img/cripta.png";
 import bitcoin from "./img/bitcoin.png";
-import { AuthProvider } from "./component/auth";
+import {AuthProvider} from "./component/auth";
+import "./App.css";
 
-const Body = styled.body`
-  margin: -10px -52px;
-  max-width: 1584px;
-  max-height: 1113px;
-  height: 891px;
+const Body = styled.div`
+  //max-width: 1584px;
+  //max-height: 1113px;
+  //height: 891px;
   padding: 0px 30px;
   background: rgb(211, 78, 214);
-  background: linear-gradient(
-    63deg,
-    rgba(211, 78, 214, 1) 0%,
-    rgba(20, 20, 106, 1) 42%,
-    rgba(0, 255, 248, 1) 100%
-  );
+  background: linear-gradient(63deg,
+  rgba(211, 78, 214, 1) 0%,
+  rgba(20, 20, 106, 1) 42%,
+  rgba(0, 255, 248, 1) 100%);
+  min-height: 100vh;
+`;
+
+const FlexContainer = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  @media screen and (max-width: 768px) {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  @media screen and (min-width: 768px) {
+    flex-direction: row;
+    align-items: center;
+  }
 `;
 
 const Header = styled.header`
@@ -62,7 +77,7 @@ const Title = styled.div`
 `;
 
 const Img = styled.div`
-  margin: -500px 0px 0px 800px;
+  //margin: -500px 0px 0px 800px;
 
   @media screen and (max-width: 768px) {
     margin: 0;
@@ -73,33 +88,35 @@ const Img = styled.div`
 `;
 
 function App() {
-  return (
-    <Body>
-      <Header>
-        <img src={icon} alt="Icon" />
-        <div>Pichdeck</div>
-        <div>Chat</div>
-        <div>Audits</div>
-        <div>Buy $PLC</div>
-      </Header>
-      <Title>
-        <h1>NEW PLAY-TO-EARN<br /> ARCADE METAVERSE</h1>
-        <p>
-          Welcome to the innovative play-to-earn blockchain Metaverse<br />
-          where you can realize all of the potential of NFT's collections.
-          <br />
-          <br />
-          Visit the playground, receive rewards, make money with our token,
-          <br />
-          and check out our games with rare NFT's!
-        </p>
-        <Button><AuthProvider/></Button>
-      </Title>
-      <Img>
-        <img src={bitcoin} alt="Bitcoin" />
-      </Img>
-    </Body>
-  );
+    return (
+        <Body>
+            <Header>
+                <img src={icon} alt="Icon"/>
+                <div>Pichdeck</div>
+                <div>Chat</div>
+                <div>Audits</div>
+                <div>Buy $PLC</div>
+            </Header>
+            <FlexContainer>
+                <Title>
+                    <h1>NEW PLAY-TO-EARN<br/> ARCADE METAVERSE</h1>
+                    <p>
+                        Welcome to the innovative play-to-earn blockchain Metaverse<br/>
+                        where you can realize all of the potential of NFT's collections.
+                        <br/>
+                        <br/>
+                        Visit the playground, receive rewards, make money with our token,
+                        <br/>
+                        and check out our games with rare NFT's!
+                    </p>
+                    <Button><AuthProvider/></Button>
+                </Title>
+                <Img>
+                    <img src={bitcoin} alt="Bitcoin"/>
+                </Img>
+            </FlexContainer>
+        </Body>
+    );
 }
 
 export default App;
