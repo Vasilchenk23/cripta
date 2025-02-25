@@ -4,22 +4,22 @@ import { useState } from "react";
 
 export default function Home() {
   const { isConnected } = useAccount();
-  const [usdt, setUsdt] = useState(1); // Default USDT value
-  const [trx, setTrx] = useState(0); // TRX value to update
+  const [usdt, setUsdt] = useState(1);
+  const [trx, setTrx] = useState(0); 
 
   const handleUsdtChange = (e) => {
-    const usdtValue = e.target.value;
-    setUsdt(usdtValue);
-
-    // Assume exchangeRate is the rate of USDT to TRX, e.g., 4.03 TRX per 1 USDT
+    const usdtValue = parseFloat(e.target.value); 
+    setUsdt(usdtValue);  
     const exchangeRate = 4.03; 
     setTrx(usdtValue * exchangeRate);
   };
+
   const [openBlock, setOpenBlock] = useState(null);
 
   const toggleBlock = (index) => {
     setOpenBlock(openBlock === index ? null : index);
   };
+
   return (
     <>
     <div className="bg-[#061313] w-full min-h-screen flex flex-col pt-8 items-center text-white px-6">
@@ -206,11 +206,7 @@ export default function Home() {
             width: "0px",
           }}
         />
-       
-        <w3m-button
-          label='КупитьTRX' 
-          >
-        </w3m-button>
+       <w3m-button label="Купить TRX" />
         <button
           aria-controls="radix-:r3:"
           aria-expanded="false"
