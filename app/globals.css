@@ -19,3 +19,11 @@ body {
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+w3m-button {
+  width: 350px;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+
