@@ -3,7 +3,7 @@ import { useAccount } from "wagmi";
 import { useState } from "react";
 
 export default function Home() {
-  const { isConnected } = useAccount;
+  const { isConnected } = useAccount();
   const [usdt, setUsdt] = useState(1); // Default USDT value
   const [trx, setTrx] = useState(0); // TRX value to update
 
